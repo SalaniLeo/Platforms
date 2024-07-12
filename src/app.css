@@ -2,23 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&display=swap');
 
 :root {
-    --background-color: linear-gradient(140deg, rgba(220,215,182,1) 0%, rgb(229, 226, 204) 35%, rgba(240,239,235,1) 100%);
-    --on-background-color: #fff1e6;
-    --slot-background-color: #eeddd3;
-
-    --outline-hard: var(--outline-soft);
-    --outline-soft: 2px solid #e8d1c5;
-    --outline-on-background: 2px solid #eddcd2;
-
-    --font-color: black;
-    --font-color-inverted: white;
-
-}
-
-:root[data-theme="dark"] {
-    /* --background-color: #0e0e0f; */
-    --background-color: radial-gradient(circle, rgb(19, 28, 72) 0%, rgba(14,14,15,1) 25%); 
-    --on-background-color: #0d0d0ed5;
+    --background-color: radial-gradient(circle, rgb(19, 28, 72) 0%, rgba(14,14,15,1) 0%); 
+    --on-background-color: #0d0d0e88;
     --slot-background-color: #20212351;
 
     --outline-hard: 2px solid #525252;
@@ -31,9 +16,23 @@
     --filter-mtrx: invert(100);
 }
 
+:root[data-theme="dark"] {
+    --background-color: linear-gradient(140deg, rgba(220,215,182,1) 0%, rgb(229, 226, 204) 35%, rgba(240,239,235,1) 100%);
+    --on-background-color: #fff1e6;
+    --slot-background-color: #eeddd3;
+
+    --outline-hard: var(--outline-soft);
+    --outline-soft: 2px solid #e8d1c5;
+    --outline-on-background: 2px solid #eddcd2;
+
+    --font-color: black;
+    --font-color-inverted: white;
+}
+
 * {
     transition-duration: 0.5s;
     color: var(--font-color);
+    text-decoration: none;
 }
 
 .matrix-icon {
@@ -46,6 +45,7 @@
 }
 
 body {
+    background: var(--background-color);
     font-family: "Biryani", sans-serif;
     font-weight: 200;
     font-style: normal;
@@ -64,23 +64,22 @@ body {
 }
 
 .root {
-    background: var(--background-color);
     height: 100vh;
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(60px);
 }
 
 .center {
     background-color: var(--on-background-color);
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
     border-radius: 2rem;
     gap: 2rem;
     width: 50%;
     max-width: 750px;
     outline: var(--outline-on-background);
-    backdrop-filter: blur(10px );
 }
 
 .title {
@@ -164,8 +163,17 @@ body {
 }
 
 @media screen and (max-width: 720px) {
+    .root {
+        background: var(--background-color);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .center {
         background-color: #00000000;
         outline: unset;
+        width: 100%;
     }
 }

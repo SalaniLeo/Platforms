@@ -3,6 +3,7 @@
     import { setTheme, currentTheme } from '$lib/theme';
     import { loadTheme } from '$lib/theme';
 	import { onMount } from 'svelte';
+    import "../app.css"
 
     onMount(() => {
         loadTheme()
@@ -23,13 +24,23 @@
 
 <slot></slot>
 
+<footer>
+    Made by SalaniLeo with ♥️
+</footer>
+
 <style>
     #theme-select {
         position: fixed;
         top: 1rem;
         right: 1rem;
+        z-index: 2;
     }
     .fa-regular {
         font-size: 1.5rem;
+    }
+    footer {
+        position: fixed;
+        bottom: 0.5rem;
+        font-weight: 500;
     }
 </style>

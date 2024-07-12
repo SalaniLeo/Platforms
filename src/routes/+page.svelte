@@ -2,19 +2,21 @@
     import favicon from "$lib/favicon.png"
     const socials = [
         {name: 'Instagram', description: "My instagram profile", link: 'https://www.instagram.com/leonardo.salanii/', icon: "fa-brands fa-instagram", class: "insta"},
-        {name: 'Telegram', description: "My Telegram profile",  link: 'https://www.instagram.com/leonardo.salanii/', icon: "fa-brands fa-telegram", class: "telegram"},
-        {name: 'Matrix', description: "My matrix profile",  link: 'https://www.instagram.com/leonardo.salanii/', class: "matrix"},
-        {name: 'LinkedIn', description: "My linkedin profile",  link: 'https://www.instagram.com/leonardo.salanii/', icon: "fa-brands fa-linkedin", class: "linkedin"},
-        {name: 'SalaniLeo', description: "My personal website",  link: 'https://www.instagram.com/leonardo.salanii/', class: "website"}
+        {name: 'Telegram', description: "My Telegram profile",  link: 'https://t.me/sudatoLeo', icon: "fa-brands fa-telegram", class: "telegram"},
+        {name: 'Matrix', description: "My matrix profile",  link: 'https://matrix.to/#/@salanileo:matrix.org', class: "matrix"},
+        {name: 'LinkedIn', description: "My linkedin profile",  link: 'https://www.linkedin.com/in/leonardo-salani/', icon: "fa-brands fa-linkedin", class: "linkedin"},
+        {name: 'SalaniLeo', description: "My personal website",  link: 'https://www.salanileo.dev', class: "website"}
     ]
 </script>
 
-<div class="root vertical">
+<div class="bubble"></div>
+
+<div class="root">
     <div class="content center vertical">
         <h1 class="title expand">Leonardo Salani</h1>
         <div class="socials vertical">
             {#each socials as social}
-            <div class="slot expand {social.class}">
+            <a class="slot expand {social.class}" href="{social.link}">
                 {#if social.name == "Matrix"}
                     <div class="icon">
                         <svg class="icon matrix-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
@@ -31,8 +33,19 @@
                     <small class="description">{social.description}</small>
                 </div>
                 <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
-            </div>
+            </a>
             {/each}
         </div>
     </div>
 </div>
+
+<style>
+    .bubble {
+        position: fixed;
+        border-radius: 50%;
+        /* box-shadow: red 0px 0px 100px 30px; */
+        right: 30%;
+        top: 50%;
+        z-index: 0;
+    }
+</style>
