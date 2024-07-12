@@ -24,9 +24,7 @@
 
 <slot></slot>
 
-<footer>
-    Made by SalaniLeo with ♥️
-</footer>
+
 
 <style>
     #theme-select {
@@ -37,10 +35,5 @@
     }
     .fa-regular {
         font-size: 1.5rem;
-    }
-    footer {
-        position: fixed;
-        bottom: 0.5rem;
-        font-weight: 500;
     }
 </style>

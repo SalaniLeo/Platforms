@@ -158,8 +158,8 @@ body {
 }
 
 .website:hover {
-    color: var(--font-color-inverted);
-    background-color: #151820;
+    color: var(--font-color-inverted) !important;
+    background-color: #303237;
 }
 
 @media screen and (max-width: 720px) {

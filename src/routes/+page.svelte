@@ -36,6 +36,9 @@
             </a>
             {/each}
         </div>
+        <footer>
+            Made by SalaniLeo with ♥️
+        </footer>
     </div>
 </div>
 
@@ -47,5 +50,10 @@
         right: 30%;
         top: 50%;
         z-index: 0;
+    }
+    footer {
+        position: fixed;
+        bottom: 0.5rem;
+        font-weight: 500;
     }
 </style>
