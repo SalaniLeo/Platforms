@@ -10,7 +10,7 @@
         {name: 'LinkedIn', description: "My linkedin profile",  link: 'https://www.linkedin.com/in/leonardo-salani/', icon: "fa-brands fa-linkedin", class: "linkedin"},
         {name: 'SalaniLeo', description: "My personal website",  link: 'https://www.salanileo.dev', class: "website"},
         {name: 'Stats.fm', description: "My music taste",  link: 'https://stats.fm/sudatoleo', class: "statsfm"},
-        {name: 'WakaTime', description: "My most used languages",  link: 'https://wakatime.com/@SalaniLeo', class: "wakatime"}
+        // {name: 'WakaTime', description: "My most used languages",  link: 'https://wakatime.com/@SalaniLeo', class: "wakatime"}
     ]
 </script>
 
