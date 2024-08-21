@@ -1,59 +1,76 @@
 <script lang="ts">
     import favicon from "$lib/favicon.png"
+    import statsfm from "$lib/statsfm.png"
+    import wakatime from "$lib/wakatime.png"
+ 
     const socials = [
         {name: 'Instagram', description: "My instagram profile", link: 'https://www.instagram.com/leonardo.salanii/', icon: "fa-brands fa-instagram", class: "insta"},
         {name: 'Telegram', description: "My Telegram profile",  link: 'https://t.me/sudatoLeo', icon: "fa-brands fa-telegram", class: "telegram"},
         {name: 'Matrix', description: "My matrix profile",  link: 'https://matrix.to/#/@salanileo:matrix.org', class: "matrix"},
         {name: 'LinkedIn', description: "My linkedin profile",  link: 'https://www.linkedin.com/in/leonardo-salani/', icon: "fa-brands fa-linkedin", class: "linkedin"},
-        {name: 'SalaniLeo', description: "My personal website",  link: 'https://www.salanileo.dev', class: "website"}
+        {name: 'SalaniLeo', description: "My personal website",  link: 'https://www.salanileo.dev', class: "website"},
+        {name: 'Stats.fm', description: "My music taste",  link: 'https://stats.fm/sudatoleo', class: "statsfm"},
+        {name: 'WakaTime', description: "My most used languages",  link: 'https://wakatime.com/@SalaniLeo', class: "wakatime"}
     ]
 </script>
 
 <div class="bubble"></div>
 
 <div class="root">
-    <div class="content center vertical">
-        <h1 class="title expand">Leonardo Salani</h1>
-        <div class="socials vertical">
-            {#each socials as social}
-            <a class="slot expand {social.class}" href="{social.link}">
-                {#if social.name == "Matrix"}
-                    <div class="icon">
-                        <svg class="icon matrix-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-                            <path d="M 5 5 A 1.0001 1.0001 0 0 0 4 6 L 4 44 A 1.0001 1.0001 0 0 0 5 45 L 8 45 A 1.0001 1.0001 0 1 0 8 43 L 6 43 L 6 7 L 8 7 A 1.0001 1.0001 0 1 0 8 5 L 5 5 z M 42 5 A 1.0001 1.0001 0 1 0 42 7 L 44 7 L 44 43 L 42 43 A 1.0001 1.0001 0 1 0 42 45 L 45 45 A 1.0001 1.0001 0 0 0 46 44 L 46 6 A 1.0001 1.0001 0 0 0 45 5 L 42 5 z M 31.074219 17.509766 C 29.975744 17.487506 28.868391 17.760297 27.978516 18.373047 C 27.407516 18.767047 26.915609 19.272813 26.349609 19.757812 C 25.488609 18.039813 23.929344 17.580781 22.152344 17.550781 C 20.351344 17.519781 18.920922 18.341797 17.669922 19.841797 L 17.669922 18 L 14 18 L 14 32 L 17.664062 32 C 17.664062 32 17.657969 26.766016 17.667969 24.166016 C 17.669969 23.704016 17.689203 23.23225 17.783203 22.78125 C 18.073203 21.39225 19.538031 20.534437 20.957031 20.648438 C 22.309031 20.757437 23.100016 21.495656 23.166016 23.097656 C 23.177016 23.376656 23.166016 32 23.166016 32 L 26.832031 32 L 26.832031 24.228516 C 26.838031 23.629516 26.901875 23.0175 27.046875 22.4375 C 27.372875 21.1375 28.590531 20.49825 30.019531 20.65625 C 31.279531 20.79525 32.239031 21.474609 32.332031 22.849609 L 32.332031 32 L 36 32 L 36 22 C 36 21 35.746359 20.490859 35.443359 19.880859 C 34.710859 18.405234 32.90501 17.546865 31.074219 17.509766 z"></path>
-                            </svg>
-                    </div>
-                {:else if social.name == "SalaniLeo"}
-                    <div class="icon"><img src="{favicon}" alt="icon" class="icon salanileo"></div>
-                {:else}
-                    <div class="icon"><i class="{social.icon}"></i></div>
-                {/if}
-                <div class="fill">
-                    <p class="name">{social.name}</p>
-                    <small class="description">{social.description}</small>
-                </div>
-                <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
-            </a>
-            {/each}
-        </div>
-        <footer>
-            Made by SalaniLeo with ♥️
-        </footer>
-    </div>
+	<div class="content center vertical">
+		<h1 class="title expand">Leonardo Salani</h1>
+		<div class="socials vertical">
+			{#each socials as social}
+				<a class="slot expand {social.class}" href={social.link}>
+					{#if social.name == 'Matrix'}
+						<div class="icon">
+							<svg
+								class="icon matrix-icon"
+								xmlns="http://www.w3.org/2000/svg"
+								x="0px"
+								y="0px"
+								width="100"
+								height="100"
+								viewBox="0 0 50 50"
+							>
+								<path
+									d="M 5 5 A 1.0001 1.0001 0 0 0 4 6 L 4 44 A 1.0001 1.0001 0 0 0 5 45 L 8 45 A 1.0001 1.0001 0 1 0 8 43 L 6 43 L 6 7 L 8 7 A 1.0001 1.0001 0 1 0 8 5 L 5 5 z M 42 5 A 1.0001 1.0001 0 1 0 42 7 L 44 7 L 44 43 L 42 43 A 1.0001 1.0001 0 1 0 42 45 L 45 45 A 1.0001 1.0001 0 0 0 46 44 L 46 6 A 1.0001 1.0001 0 0 0 45 5 L 42 5 z M 31.074219 17.509766 C 29.975744 17.487506 28.868391 17.760297 27.978516 18.373047 C 27.407516 18.767047 26.915609 19.272813 26.349609 19.757812 C 25.488609 18.039813 23.929344 17.580781 22.152344 17.550781 C 20.351344 17.519781 18.920922 18.341797 17.669922 19.841797 L 17.669922 18 L 14 18 L 14 32 L 17.664062 32 C 17.664062 32 17.657969 26.766016 17.667969 24.166016 C 17.669969 23.704016 17.689203 23.23225 17.783203 22.78125 C 18.073203 21.39225 19.538031 20.534437 20.957031 20.648438 C 22.309031 20.757437 23.100016 21.495656 23.166016 23.097656 C 23.177016 23.376656 23.166016 32 23.166016 32 L 26.832031 32 L 26.832031 24.228516 C 26.838031 23.629516 26.901875 23.0175 27.046875 22.4375 C 27.372875 21.1375 28.590531 20.49825 30.019531 20.65625 C 31.279531 20.79525 32.239031 21.474609 32.332031 22.849609 L 32.332031 32 L 36 32 L 36 22 C 36 21 35.746359 20.490859 35.443359 19.880859 C 34.710859 18.405234 32.90501 17.546865 31.074219 17.509766 z"
+								></path>
+							</svg>
+						</div>
+					{:else if social.name == 'SalaniLeo'}
+						<div class="icon"><img src={favicon} alt="icon" class="icon salanileo" /></div>
+                    {:else if social.name == 'Stats.fm'}
+						<div class="icon"><img src={statsfm} alt="icon" class="icon statsfm" /></div>
+                    {:else if social.name == 'WakaTime'}
+						<div class="icon"><img src={wakatime} alt="icon" class="icon wakatime" /></div>
+					{:else}
+						<div class="icon"><i class={social.icon}></i></div>
+					{/if}
+					<div class="fill">
+						<p class="name">{social.name}</p>
+						<small class="description">{social.description}</small>
+					</div>
+					<div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+				</a>
+			{/each}
+		</div>
+		<footer>Made by SalaniLeo with ♥️</footer>
+	</div>
 </div>
 
 <style>
-    .bubble {
-        position: fixed;
-        border-radius: 50%;
-        /* box-shadow: red 0px 0px 100px 30px; */
-        right: 30%;
-        top: 50%;
-        z-index: 0;
-    }
-    footer {
-        position: fixed;
-        bottom: 0.5rem;
-        font-weight: 500;
-    }
+	.bubble {
+		position: fixed;
+		border-radius: 50%;
+		/* box-shadow: red 0px 0px 100px 30px; */
+		right: 30%;
+		top: 50%;
+		z-index: 0;
+	}
+	footer {
+		position: fixed;
+		bottom: 0.5rem;
+		font-weight: 500;
+	}
 </style>
