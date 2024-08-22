@@ -14,8 +14,6 @@
     ]
 </script>
 
-<div class="bubble"></div>
-
 <div class="root">
 	<div class="content center vertical">
 		<h1 class="title expand">Leonardo Salani</h1>
@@ -42,8 +40,6 @@
 						<div class="icon"><img src={favicon} alt="icon" class="icon salanileo" /></div>
                     {:else if social.name == 'Stats.fm'}
 						<div class="icon"><img src={statsfm} alt="icon" class="icon statsfm" /></div>
-                    {:else if social.name == 'WakaTime'}
-						<div class="icon"><img src={wakatime} alt="icon" class="icon wakatime" /></div>
 					{:else}
 						<div class="icon"><i class={social.icon}></i></div>
 					{/if}
@@ -55,22 +51,6 @@
 				</a>
 			{/each}
 		</div>
-		<footer>Made by SalaniLeo with ♥️</footer>
+		<!-- <footer>Made by SalaniLeo with ♥️</footer> -->
 	</div>
 </div>
-
-<style>
-	.bubble {
-		position: fixed;
-		border-radius: 50%;
-		/* box-shadow: red 0px 0px 100px 30px; */
-		right: 30%;
-		top: 50%;
-		z-index: 0;
-	}
-	footer {
-		position: fixed;
-		bottom: 0.5rem;
-		font-weight: 500;
-	}
-</style>
