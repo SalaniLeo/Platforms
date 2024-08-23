@@ -1,8 +1,21 @@
 <script lang="ts">
-    import favicon from "$lib/favicon.png"
+	import favicon from "$lib/favicon.png"
     import statsfm from "$lib/statsfm.png"
-    import wakatime from "$lib/wakatime.png"
- 
+	import { onMount } from "svelte";
+	import { fetch_analytics } from '$lib/get_users_infos.js';
+
+	export let data;
+
+	let website = data.source
+	let analytics_url = data.analytics_url
+	let user_ip = data.user_ip
+
+	onMount( () => {
+		let userAgent = window.navigator.userAgent
+		fetch_analytics(website, userAgent, user_ip, analytics_url)
+	})
+
+
     const socials = [
         {name: 'Instagram', description: "My instagram profile", link: 'https://www.instagram.com/leonardo.salanii/', icon: "fa-brands fa-instagram", class: "insta"},
         {name: 'Telegram', description: "My Telegram profile",  link: 'https://t.me/sudatoLeo', icon: "fa-brands fa-telegram", class: "telegram"},
@@ -12,6 +25,9 @@
         {name: 'Stats.fm', description: "My music taste",  link: 'https://stats.fm/sudatoleo', class: "statsfm"},
         // {name: 'WakaTime', description: "My most used languages",  link: 'https://wakatime.com/@SalaniLeo', class: "wakatime"}
     ]
+
+
+
 </script>
 
 <div class="root">

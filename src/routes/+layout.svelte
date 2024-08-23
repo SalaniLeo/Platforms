@@ -1,11 +1,6 @@
 <script lang="ts">
-
     import { setTheme, currentTheme } from '$lib/theme';
     import "../app.css"
-
-    // onMount(() => {
-    //     loadTheme()
-    // });
 </script>
 
 <div id="theme-select">
