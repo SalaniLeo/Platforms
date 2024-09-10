@@ -1,10 +1,9 @@
 import { env } from '$env/dynamic/private';
 
 export async function load(event) {
+	const analytics_url = env.ANALYTICS;
+	const user_ip = event.getClientAddress();
+	const source = event.url.origin;
 
-    let analytics_url = env.ANALYTICS
-    let user_ip = event.getClientAddress()
-    let source = event.url.origin
-
-    return { analytics_url, user_ip, source }
+	return { analytics_url, user_ip, source };
 }
