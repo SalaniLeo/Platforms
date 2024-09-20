@@ -2,22 +2,16 @@
 export async function fetch_analytics(website: any, userAgent: string, user_ip: any, analytics_url: RequestInfo | URL) {
     const browser = getBrowserInfo(userAgent)
     const os = getOSInfo(userAgent)
-    try {
-        const response = await fetch(analytics_url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                user_ip, website, browser, os
-            })
-        }).then((data) => {
-            console.log(data)
-        });
+    const response = await fetch(analytics_url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_ip, website, browser, os
+        })
+    })
 
-    } catch (error) {
-        console.error(error)
-    }
 }
 
 function getBrowserInfo(userAgent: string | string[]) {
