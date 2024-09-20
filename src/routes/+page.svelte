@@ -12,9 +12,9 @@
 
 	onMount( () => {
 		let userAgent = window.navigator.userAgent
-		if (data.is_dev != 'development' || data.is_dev === undefined) {
-			fetch_analytics(website, userAgent, user_ip, analytics_url)
-		}
+		// if (data.is_dev != 'development' || data.is_dev === undefined) {
+		fetch_analytics(website, userAgent, user_ip, analytics_url)
+		// }
 	})
 
 
