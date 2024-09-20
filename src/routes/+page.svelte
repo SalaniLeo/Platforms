@@ -2,7 +2,7 @@
 	import favicon from "$lib/favicon.png"
     import statsfm from "$lib/statsfm.png"
 	import { onMount } from "svelte";
-	import { fetch_analytics } from '$lib/get_users_infos.js';
+	import { fetch_analytics } from '$lib/get_users_infos';
 
 	export let data;
 
@@ -12,7 +12,9 @@
 
 	onMount( () => {
 		let userAgent = window.navigator.userAgent
-		fetch_analytics(website, userAgent, user_ip, analytics_url)
+		if (data.is_dev != 'development') {
+			fetch_analytics(website, userAgent, user_ip, analytics_url)
+		}
 	})
 
 

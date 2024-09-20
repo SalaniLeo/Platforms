@@ -1,5 +1,5 @@
 
-export async function fetch_analytics(website, userAgent, user_ip, analytics_url) {
+export async function fetch_analytics(website: any, userAgent: string, user_ip: any, analytics_url: RequestInfo | URL) {
     const browser = getBrowserInfo(userAgent)
     const os = getOSInfo(userAgent)
 
@@ -12,13 +12,16 @@ export async function fetch_analytics(website, userAgent, user_ip, analytics_url
             body: JSON.stringify({
                 user_ip, website, browser, os
             })
+        }).then((data) => {
+            console.log(data)
         });
+
     } catch (error) {
 
     }
 }
 
-function getBrowserInfo(userAgent) {
+function getBrowserInfo(userAgent: string | string[]) {
     if (userAgent.includes("Chrome") && !userAgent.includes("Edg")) {
         return "Chrome";
     } else if (userAgent.includes("Firefox")) {
@@ -34,7 +37,7 @@ function getBrowserInfo(userAgent) {
     }
 }
 
-function getOSInfo(userAgent) {
+function getOSInfo(userAgent: string | string[]) {
 
     if (userAgent.includes("Win")) {
         return "Windows";
