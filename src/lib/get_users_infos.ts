@@ -2,7 +2,7 @@
 export async function fetch_analytics(website: any, userAgent: string, user_ip: any, analytics_url: RequestInfo | URL) {
     const browser = getBrowserInfo(userAgent)
     const os = getOSInfo(userAgent)
-
+    console.log("CIAOA")
     try {
         const response = await fetch(analytics_url, {
             method: 'POST',
@@ -17,7 +17,7 @@ export async function fetch_analytics(website: any, userAgent: string, user_ip: 
         });
 
     } catch (error) {
-
+        console.error(error)
     }
 }
 
